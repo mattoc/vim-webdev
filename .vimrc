@@ -67,6 +67,11 @@ nmap N Nzz
 " clear current search term
 map <silent> <C-N> :let @/=""<CR>
 
+" reselect visual block after indent/outdent
+" http://vimbits.com/bits/20
+vnoremap < <gv
+vnoremap > >gv
+
 " when vsp'litting open to the right of current buffer
 set splitright
 set splitbelow
