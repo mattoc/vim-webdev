@@ -101,6 +101,8 @@ nmap <Leader>js :set syntax=javascript<CR><Esc>
 
 nnoremap <Leader>pa :let @+=expand("%:p")<CR>
 
+nnoremap <Leader>here :cd %:p:h<CR>:pwd<CR>
+
 " Optionally highlight >80 chars
 nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
 hi OverLength ctermbg=none cterm=none
