@@ -99,6 +99,8 @@ nmap <Leader>nosb :set noscrollbind<CR><Esc>
 
 nmap <Leader>js :set syntax=javascript<CR><Esc>
 
+nnoremap <Leader>pa :let @+=expand("%:p")<CR>
+
 " Optionally highlight >80 chars
 nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
 hi OverLength ctermbg=none cterm=none
