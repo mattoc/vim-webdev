@@ -15,7 +15,9 @@ set backspace=indent,eol,start  " more powerful backspacing
 syntax enable
 
 " Nice colorscheme that doesn't break your eyes or your brain
-colorscheme mustang
+" colorscheme mustang
+set background=dark
+colorscheme solarized
 
 " Show matching brackets
 set showmatch
