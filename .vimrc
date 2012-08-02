@@ -14,6 +14,10 @@ set backspace=indent,eol,start  " more powerful backspacing
 " Turn syntax-highlight on
 syntax enable
 
+" syntastic setup, only check python
+let g:syntastic_check_on_open=1  " 0 by default
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['python'], 'passive_filetypes': [] }
+
 " Nice colorscheme that doesn't break your eyes or your brain
 colorscheme mustang
 
