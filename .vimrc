@@ -139,6 +139,11 @@ if has("gui_running")
     set guioptions=egmht
     set guifont=Monaco:h14
     set antialias
+
+    set number
+
+    " Start NERDTree but focus main buffer
+    autocmd VimEnter * NERDTree | wincmd p
 endif
 
 set autoindent
