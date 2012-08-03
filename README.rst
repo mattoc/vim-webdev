@@ -10,7 +10,7 @@ In a term window:
   $ git clone git://github.com/mattoc/vim-webdev.git vimsetup
   $ mv .vim .old-vim
   $ mv .vimrc .old-vimrc
-  $ mv vimsetup .vim
+  $ mv vim-webdev .vim
   $ ln -s .vim/.vimrc .vimrc
 
 
