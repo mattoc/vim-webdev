@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -e .vim ]
+then
+	mv .vim .old-vim
+fi
+
+if [ -e .vimrc ]
+then
+	mv .vimrc .old-vimrc
+fi
+
+mv vim-webdev .vim
+ln -s .vim/.vimrc
+
+cd ~/.vim
+git submodule update --init

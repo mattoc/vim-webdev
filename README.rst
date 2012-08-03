@@ -7,20 +7,8 @@ In a term window:
 ::
 
   $ cd
-  $ git clone git://github.com/mattoc/vim-webdev.git vimsetup
-  $ mv .vim .old-vim
-  $ mv .vimrc .old-vimrc
-  $ mv vim-webdev .vim
-  $ ln -s .vim/.vimrc .vimrc
-
-
-Now load the submodules (like tpope's pathogen) from GitHub:
-
-::
-
-  $ cd ~/.vim
-  $ git submodule update --init
-
+  $ git clone git://github.com/mattoc/vim-webdev.git
+  $ ./vim-webdev/bin/setup
 
 Options
 -------
