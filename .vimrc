@@ -35,15 +35,12 @@ set t_Co=256
 
 " Python-friendly settings
 " http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
-autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
  \ cinwords=if,elif,else,for,while,try,except,def,class,self
 
 " HTML and JS friendly settings
-autocmd BufRead *.html set ts=4 sw=4
-autocmd BufRead *.js set ts=4 sts=4 sw=4 et
-
-" For Javascript editing on the fly
-nmap ,js :set ts=4 sts=4 sw=4 et syntax=javascript<CR><Esc>
+autocmd BufRead,BufNewFile *.html set ts=4 sw=4
+autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
 
 " Documentation
 " - ReStructured Text (Python/Django for Sphinx docs)
@@ -100,8 +97,6 @@ nmap <Leader>nops :set nopaste<CR><Esc>
 " Set scroll bind for vimdiff or side-by-side editing
 nmap <Leader>sb :set scrollbind<CR><C-w><C-w>:set scrollbind<CR><Esc>
 nmap <Leader>nosb :set noscrollbind<CR><Esc>
-
-nmap <Leader>js :set syntax=javascript<CR><Esc>
 
 nnoremap <Leader>pa :let @+=expand("%:p")<CR>
 
