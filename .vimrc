@@ -141,8 +141,8 @@ if has("gui_running")
 
     set number
 
-    " Start NERDTree but focus main buffer
-    autocmd VimEnter * NERDTree | wincmd p
+    " Start NERDTree
+    autocmd VimEnter * NERDTree
 endif
 
 set autoindent
