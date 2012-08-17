@@ -42,6 +42,9 @@ autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandt
 autocmd BufRead,BufNewFile *.html set ts=4 sw=4
 autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
 
+" PHP-friendly settings
+au BufRead,BufNewFile *.php set ts=4 sw=4 noet
+
 " Documentation
 " - ReStructured Text (Python/Django for Sphinx docs)
 au FileType rst set ts=2 sts=2 sw=2 et syntax=rst
