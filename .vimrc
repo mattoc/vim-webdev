@@ -54,6 +54,20 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
+" Smart settings for prose
+nnoremap <Leader>P :call<SID>ProseToggle()<CR>
+fun! s:ProseToggle()
+ if !exists('w:prosemode')
+  set wrap linebreak nolist nonumber
+  let w:prosemode = 1
+  echo "Prose mode enabled"
+ else
+  set nowrap nolinebreak nolist number
+  unl w:prosemode
+  echo "Prose mode disabled"
+ endif
+endfunction
+
 " NERDTree
 nmap <Leader>N :NERDTreeToggle<CR><Esc>
 
