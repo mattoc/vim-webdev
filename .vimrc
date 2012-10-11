@@ -33,6 +33,19 @@ set ignorecase smartcase
 " Set terminal colour output
 set t_Co=256
 
+" I like having line numbers on, but don't want to wrap lines in a
+" standard-sized terminal window.
+fun! WinSizeAutoNumber()
+    if winwidth(0) > 84
+        set number
+    else
+        set nonumber
+    endif
+endfunction
+
+call WinSizeAutoNumber()
+au VimResized * call WinSizeAutoNumber()
+
 " Python-friendly settings
 " http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
 autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
