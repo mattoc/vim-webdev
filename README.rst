@@ -7,7 +7,7 @@ In a term window:
 ::
 
   $ cd
-  $ git clone git://github.com/mattoc/vim-webdev.git
+  $ git clone https://github.com/mattoc/vim-webdev.git
   $ ./vim-webdev/bin/setup
 
 Options
