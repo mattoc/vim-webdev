@@ -52,7 +52,7 @@ autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandt
  \ cinwords=if,elif,else,for,while,try,except,def,class,self
 
 " HTML and JS friendly settings
-autocmd BufRead,BufNewFile *.html set ts=4 sw=4
+autocmd BufRead,BufNewFile *.html set ts=4 sw=4 sts=4 et
 autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
 
 " PHP-friendly settings
