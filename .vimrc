@@ -130,7 +130,6 @@ nmap <Leader>nosb :set noscrollbind<CR><Esc>
 
 nnoremap <Leader>pa :let @+=expand("%:p")<CR>
 
-nnoremap <Leader>here :cd %:p:h<CR>:pwd<CR>
 
 " Optionally highlight >80 chars
 nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
