@@ -169,8 +169,8 @@ let g:pep8_map = '<Leader>8'
 " MacVim options
 if has("gui_running")
     set guioptions=egmht
-    " set guifont=Monaco:h14
-    set guifont=Source\ Code\ Pro:h14
+    set guifont=Monaco:h12
+    " set guifont=Source\ Code\ Pro:h14
     set antialias
 
     set number
