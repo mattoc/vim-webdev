@@ -133,7 +133,9 @@ nmap <Leader>nosb :set noscrollbind<CR><Esc>
 
 nnoremap <Leader>pa :let @+=expand("%:p")<CR>
 
-nnoremap <Leader>here :cd %:p:h<CR>:pwd<CR>
+" RST Headings
+nnoremap <Leader>1 yypVr=
+nnoremap <Leader>2 yypVr-
 
 " Optionally highlight >80 chars
 nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
