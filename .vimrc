@@ -55,6 +55,9 @@ autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandt
 autocmd BufRead,BufNewFile *.html set ts=4 sw=4 sts=4 et
 autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
 
+" YAML (ansible playbooks etc)
+autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
+
 " PHP-friendly settings
 au BufRead,BufNewFile *.php set ts=4 sw=4 noet
 
