@@ -87,9 +87,6 @@ endfunction
 " NERDTree
 nmap <Leader>N :NERDTreeToggle<CR><Esc>
 
-" gundo - visual undo tree
-nmap <Leader>G :GundoToggle<CR><Esc>
-
 " show search matches as-you-type
 set incsearch
 set hlsearch
