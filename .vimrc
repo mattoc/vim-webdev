@@ -178,7 +178,7 @@ if has("gui_running")
     set number
 
     " Start NERDTree
-    autocmd VimEnter * NERDTree
+    "autocmd VimEnter * NERDTree
 endif
 
 set autoindent
