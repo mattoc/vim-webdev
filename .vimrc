@@ -58,34 +58,9 @@ autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
 " YAML (ansible playbooks etc)
 autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
 
-" PHP-friendly settings
-au BufRead,BufNewFile *.php set ts=4 sw=4 noet
-
 " Documentation
 " - ReStructured Text (Python/Django for Sphinx docs)
 au FileType rst set ts=2 sts=2 sw=2 et syntax=rst
-
-" Python autocomplete
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
-
-" Smart settings for prose
-nnoremap <Leader>P :call<SID>ProseToggle()<CR>
-fun! s:ProseToggle()
- if !exists('w:prosemode')
-  set wrap linebreak nolist nonumber
-  let w:prosemode = 1
-  echo "Prose mode enabled"
- else
-  set nowrap nolinebreak nolist number
-  unl w:prosemode
-  echo "Prose mode disabled"
- endif
-endfunction
-
-" NERDTree
-nmap <Leader>N :NERDTreeToggle<CR><Esc>
 
 " show search matches as-you-type
 set incsearch
@@ -107,49 +82,11 @@ vnoremap > >gv
 set splitright
 set splitbelow
 
-" Set temp write directory for fugitive's temp files
-set directory=,~/tmp,$TMP
-
 " Show partial command sequence in status bar
 set showcmd
 
 " Disable Ex mode. Dvorak has its quirks 8-)
 map Q <Nop>
-
-" Quick show/hide line number
-nmap <Leader>num :set number<CR><Esc>
-nmap <Leader>nonum :set nonumber<CR><Esc>
-
-" Quick paste mode
-nmap <Leader>ps :set paste<CR><Esc>i
-nmap <Leader>nops :set nopaste<CR><Esc>
-
-" Set scroll bind for vimdiff or side-by-side editing
-nmap <Leader>sb :set scrollbind<CR><C-w><C-w>:set scrollbind<CR><Esc>
-nmap <Leader>nosb :set noscrollbind<CR><Esc>
-
-nnoremap <Leader>pa :let @+=expand("%:p")<CR>
-
-" RST Headings
-nnoremap <Leader>1 yypVr=
-nnoremap <Leader>2 yypVr-
-
-" Optionally highlight >80 chars
-nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
-hi OverLength ctermbg=none cterm=none
-match OverLength /\%>80v/
-fun! s:LongLineHLToggle()
- if !exists('w:longlinehl')
-  let w:longlinehl = matchadd('ErrorMsg', '.\%>80v', 0)
-  echo "Long lines highlighted"
- else
-  call matchdelete(w:longlinehl)
-  unl w:longlinehl
-  echo "Long lines unhighlighted"
- endif
-endfunction
-
-nnoremap <Leader>sv :source ~/.vimrc<CR><Esc>
 
 " Source .vimrc automatically once written
 autocmd! bufwritepost ~/.vimrc source %
@@ -169,13 +106,9 @@ let g:pep8_map = '<Leader>8'
 if has("gui_running")
     set guioptions=egmht
     set guifont=Monaco:h12
-    " set guifont=Source\ Code\ Pro:h14
     set antialias
 
     set number
-
-    " Start NERDTree
-    "autocmd VimEnter * NERDTree
 endif
 
 set autoindent
