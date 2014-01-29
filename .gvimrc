@@ -1,3 +1,1 @@
-set lines=32
-set columns=136
-
+set guifont=Ubuntu\ Mono\ 10
