@@ -10,8 +10,14 @@ then
 	mv .vimrc .old-vimrc
 fi
 
+if [ -e .gvimrc ]
+then
+	mv .gvimrc .old-gvimrc
+fi
+
 mv vim-webdev .vim
 ln -s .vim/.vimrc
+ln -s .vim/.gvimrc
 
 cd ~/.vim
 git submodule update --init
