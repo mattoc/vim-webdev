@@ -48,12 +48,15 @@ au VimResized * call WinSizeAutoNumber()
 
 " Python-friendly settings
 " http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
-autocmd BufRead,BufNewFile,FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd BufRead,BufNewFile python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
  \ cinwords=if,elif,else,for,while,try,except,def,class,self
 
 " HTML and JS friendly settings
-autocmd BufRead,BufNewFile,FileType html set ts=4 sw=4 noet
-autocmd BufRead,BufNewFile,FileType javascript set ts=4 sts=4 sw=4 et
+autocmd BufRead,BufNewFile *.html set ts=4 sw=4 noet
+autocmd FileType html set ts=4 sw=4 noet
+
+autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
+autocmd FileType javascript set ts=4 sts=4 sw=4 et
 
 " YAML (ansible playbooks etc)
 autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
