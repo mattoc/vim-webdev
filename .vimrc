@@ -8,9 +8,6 @@ set nocompatible
 " Always show the status line (current buffer path is nice to have)
 set laststatus=2
 
-" We want to be able to backspace over anything and everything
-set backspace=indent,eol,start  " more powerful backspacing
-
 " Turn syntax-highlight on
 syntax enable
 
@@ -48,12 +45,11 @@ au VimResized * call WinSizeAutoNumber()
 
 " Python-friendly settings
 " http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
-autocmd BufRead,BufNewFile *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd BufRead,BufNewFile,FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
  \ cinwords=if,elif,else,for,while,try,except,def,class,self
 
 " HTML and JS friendly settings
-autocmd BufRead,BufNewFile *.html set ts=4 sw=4 sts=4 et
-autocmd BufRead,BufNewFile *.js set ts=4 sts=4 sw=4 et
+autocmd BufRead,BufNewFile,FileType html, javascript set ts=4 sw=4 noet
 
 " YAML (ansible playbooks etc)
 autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
@@ -63,8 +59,7 @@ autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
 au FileType rst set ts=2 sts=2 sw=2 et syntax=rst
 
 " show search matches as-you-type
-set incsearch
-set hlsearch
+set incsearch hlsearch
 
 " centre the screen to the currently highlighted search term
 nmap n nzz
@@ -79,8 +74,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " when vsp'litting open to the right of current buffer
-set splitright
-set splitbelow
+set splitright splitbelow
 
 " Show partial command sequence in status bar
 set showcmd
@@ -98,9 +92,6 @@ filetype plugin on
 
 " pyflakes validation
 let g:pyflakes_use_quickfix = 0
-
-" PEP8 validation
-let g:pep8_map = '<Leader>8'
 
 " MacVim options
 if has("gui_running")
