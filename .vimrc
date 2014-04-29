@@ -43,21 +43,10 @@ endfunction
 call WinSizeAutoNumber()
 au VimResized * call WinSizeAutoNumber()
 
-" Python-friendly settings
-" http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
-autocmd BufRead,BufNewFile,FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
- \ cinwords=if,elif,else,for,while,try,except,def,class,self
-
-" HTML and JS friendly settings
-autocmd BufRead,BufNewFile,FileType html set ts=4 sw=4 noet
-autocmd BufRead,BufNewFile,FileType javascript set ts=4 sw=4 noet
-
-" YAML (ansible playbooks etc)
-autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
-
-" Documentation
-" - ReStructured Text (Python/Django for Sphinx docs)
-au FileType rst set ts=2 sts=2 sw=2 et syntax=rst
+" http://vim.wikia.com/wiki/File_type_plugins#Setting_a_default_filetype
+let g:do_filetype = 0
+au BufWinEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
+au BufEnter * if g:do_filetype | setf python | let g:do_filetype = 0 | endif
 
 " show search matches as-you-type
 set incsearch hlsearch
@@ -88,7 +77,6 @@ autocmd! bufwritepost ~/.vimrc source %
 
 " Ok, pathogen has loaded everything so restore file settings
 syntax on
-filetype on
 filetype plugin on
 
 " pyflakes validation
