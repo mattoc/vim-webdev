@@ -49,7 +49,8 @@ autocmd BufRead,BufNewFile,FileType python set tabstop=4 softtabstop=4 shiftwidt
  \ cinwords=if,elif,else,for,while,try,except,def,class,self
 
 " HTML and JS friendly settings
-autocmd BufRead,BufNewFile,FileType html, javascript set ts=4 sw=4 noet
+autocmd BufRead,BufNewFile,FileType html set ts=4 sw=4 noet
+autocmd BufRead,BufNewFile,FileType javascript set ts=4 sw=4 noet
 
 " YAML (ansible playbooks etc)
 autocmd BufRead,BufNewFile *.yml set ts=2 sw=2 sts=2 et
