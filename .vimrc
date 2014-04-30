@@ -48,6 +48,9 @@ let g:do_filetype = 0
 au BufWinEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
 au BufEnter * if g:do_filetype | setf python | let g:do_filetype = 0 | endif
 
+" Handle Kivy kv files
+au BufRead,BufNewFile *.kv set filetype=python
+
 " show search matches as-you-type
 set incsearch hlsearch
 
